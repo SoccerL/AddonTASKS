@@ -1,4 +1,3 @@
-package Day_2;
 import java.util.Arrays;
 import java.util.Scanner;
 public class Task_2 {

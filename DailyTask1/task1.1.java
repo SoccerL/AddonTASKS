@@ -1,4 +1,3 @@
-package Day_1;
 import java.util.Arrays;
 public class Task_1 {
 	public static int[] insertAtPosition(int[] arr, int element, int position) {

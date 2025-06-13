@@ -1,5 +1,3 @@
-package Day_1;
-
 public class Task_7 {
 	public static int sod(int num){
 		if(num==0) {

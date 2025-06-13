@@ -1,4 +1,3 @@
-package Day_5;
 public class Task_2 {
 	class Node
 	{

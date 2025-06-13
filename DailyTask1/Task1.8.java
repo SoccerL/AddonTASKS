@@ -1,4 +1,3 @@
-package Day_1;
 import java.util.Scanner;
 public class Task_8 {
 	public static void displayArray(int[] arr, int size) {

@@ -25,7 +25,7 @@ class DoublyLinkedList {
         Node temp = head;
         while (temp.next != null) {
             temp = temp.next;
-        }
+        }44444444444444444444444444
  
         temp.next = newNode;
         newNode.prev = temp;
@@ -79,4 +79,4 @@ public class Main {
         dll.traverseFromBack();  // Output: 40 <-> 30 <-> 20 <-> 10
     }
 }
- 
+  

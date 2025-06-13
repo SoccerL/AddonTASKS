@@ -1,5 +1,3 @@
-package Day_2;
-
 import java.util.Scanner;
 public class Task_3 {
 
