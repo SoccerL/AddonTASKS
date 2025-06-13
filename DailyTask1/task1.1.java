@@ -1,59 +1,28 @@
-import java.util.ArrayList;
- 
-public class ArrayOperations {
- 
-    public static void displayArray(ArrayList<Integer> arr) {
-        System.out.println("Current Array: " + arr);
-    }
- 
-    // Insertion
-    public static void insertElement(ArrayList<Integer> arr, int element, int position) {
-        if (position < 0 || position > arr.size()) {
-            System.out.println("Invalid position for insertion.");
-        } else {
-            arr.add(position, element);
-            System.out.println("Inserted " + element + " at position " + position);
+package Day_1;
+import java.util.Arrays;
+public class Task_1 {
+	public static int[] insertAtPosition(int[] arr, int element, int position) {
+        if (position < 0 || position > arr.length) {
+            System.out.println("Invalid position!");
+            return arr;
         }
-    }
- 
-    // Updation
-    public static void updateElement(ArrayList<Integer> arr, int position, int newValue) {
-        if (position < 0 || position >= arr.size()) {
-            System.out.println("Invalid position for update.");
-        } else {
-            int oldValue = arr.get(position);
-            arr.set(position, newValue);
-            System.out.println("Updated position " + position + " from " + oldValue + " to " + newValue);
+        int[] newArr = new int[arr.length + 1];
+        for (int i = 0;i < newArr.length; i++) {
+        	for(int  j = 0;j<newArr.length;j++) {	
+            if (i == position) {
+                newArr[i] = element;
+            } else {
+                newArr[i] = arr[j++];
+            }
         }
-    }
- 
-    // Deletion
-    public static void deleteElement(ArrayList<Integer> arr, int position) {
-        if (position < 0 || position >= arr.size()) {
-            System.out.println("Invalid position for deletion.");
-        } else {
-            int removed = arr.remove(position);
-            System.out.println("Deleted element " + removed + " from position " + position);
         }
+        return newArr;
     }
- 
-    public static void main(String[] args) {
-        ArrayList<Integer> arr = new ArrayList<>();
-        arr.add(10);
-        arr.add(20);
-        arr.add(30);
-        arr.add(40);
-        arr.add(50);
- 
-        displayArray(arr);
- 
-        insertElement(arr, 99, 2);
-        displayArray(arr);
- 
-        updateElement(arr, 3, 77);
-        displayArray(arr);
- 
-        deleteElement(arr, 1);
-        displayArray(arr);
-    }
+public static void main(String args[]) {
+	    	int[] arr = {10, 20, 30, 40, 50};
+	        int element = 25;
+	        int position = 2;
+	        arr = insertAtPosition(arr, element, position);
+	        System.out.println("Updated Array: " + Arrays.toString(arr));
+	    }
 }
