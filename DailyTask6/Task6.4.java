@@ -1,77 +1,44 @@
-package sampleTry;
+package sdAddon;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class stack_sll {
-	
-	node head;
-	class node
-	{
-		node next;
-		int data;
-		node(int num)
-		{
-			data = num;
-			next=null;
+public class Queue1 {
+	int arr[] = new int[5];
+	int rear;
+	int front;
+	public void queue() {
+		rear=-1;
+		front=-1;
+	}
+	public void re(int num) {
+		if(rear==4) {
+			System.out.println("Queue Spreadout");
+		}
+		else {
+			arr[++rear]=num;
 		}
 	}
-	public stack_sll()
-	{
-		head=null;
-	}
-	public void push(int num)
-	{
-		node newNode= new node(num);
-		if(head==null)
-		{
-			head=newNode;
-			newNode.next=null;
+	public void fr() {
+		if(front==4) {
+			System.out.println("Empty Queue");
 		}
-		else
-		{
-			newNode.next=head;
-			head=newNode;
+		else {
+			arr[++front]=0;
 		}
 	}
-	public void pop()
-	{
-		if(head==null)
-		{
-			System.out.println("Stack is empty");
-		}
-		else
-		{
-			System.out.println(head.data);
-			head=head.next;
-		}
+	public void display() {
+		System.out.println(Arrays.toString(arr));
 	}
-	public void display()
-	{
-		node temp=head;
-		while(temp!=null)
-		{
-			System.out.print(temp.data+" ");
-			temp=temp.next;
-		}
-		System.out.println("");
-	}
-	public static void main(String []args)
-	{
-		
-		stack_sll ss=new stack_sll();
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter the size of the stack:");
-		int size=sc.nextInt();
-		System.out.println("Enter the values to be inserted in the stack:");
-		for(int i=0;i<size;i++)
-		{
-			ss.push(sc.nextInt());
-		}
-		ss.display();
-		ss.pop();
-		ss.pop();
-		ss.pop();
-		ss.pop();
-		ss.display();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Queue1 ts = new Queue1();
+		ts.re(4);
+		ts.re(5);
+		ts.re(8);
+		ts.fr();
+		ts.re(7);
+		ts.display();
+		sc.close();
 	}
 }
